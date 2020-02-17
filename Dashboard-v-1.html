@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard-v-1</title>
+    <link rel="stylesheet" type="text/css" href="Main.css" />
+    <link rel="stylesheet" type="text/css" href="Theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-gray">
+    <div id="sidebar">
+      <div class="toggle-btn pr-green-color pd-10 border-rad-4p" onclick="toggleSidebar()">
+        <a>
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+      <div class="dp-flex-c fs-13">
+          <div class="circle-48 bg-gray mg-l-20p mg-t-40p"></div>
+          <div class="e6-color mg-l-20p mg-t-5p fs-15">David Williams</div>
+          <div class="mg-l-20p mg-t-5p e81-color">
+              Art Director
+            <span class="fa fa-caret-down"></span>
+          </div>
+        <button class="dropdown-btn no-border pr-bg-color pd-10 mg-t-20p">
+          <span class="fa fa-th-large"></span>
+          <span>Dashboards</span>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a class="font-st-none pd-10 mg-l-10p" href="#">Dashboard-v-1</a>
+          <a class="font-st-none pd-10 mg-l-10p" href="#">Dashboard-v-2</a>
+          <a class="font-st-none pd-10 mg-l-10p" href="#">Dashboard-v-3</a>
+        </div>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-diamond"></span>
+            <span>Layouts</span>   
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#about">
+            <span class="fa fa-bar-chart"></span>
+            <span>Graphs</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#services">
+            <span class="fa fa-envelope"></span>
+            <span>Mailbox</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#clients">
+            <span class="fa fa-wrench"></span>
+            <span>Widgets</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-wpforms"></span>
+            <span>Forms</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-desktop"></span>
+            <span>App Views</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-files-o"></span>
+            <span>Other Pages</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-globe"></span>
+            <span>Miscellaneous</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-paint-brush"></span>
+            <span>UI Elements</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-laptop"></span>
+            <span>Grid Options</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-table"></span>
+            <span>Tables</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-file-picture-o"></span>
+            <span>Gallery</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-paint-brush"></span>
+            <span>Menu Levels</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p" href="#contact">
+            <span class="fa fa-magic"></span>
+            <span>CSS Animations</span>
+        </a>
+      </div>
+    </div>
+    <div class="dp-flex-sp-bw pd-20 fs-13 border-box" id="headerContent">
+        <input type="search" id="headerSearch" class="no-border-ip w-20 bg-transprnt" placeholder="Search for something..."></input>
+        <div class="">
+            <span class="e99-color">Welcome to INSPINIA+ Admin Theme.</span>
+            <a href="" class="fa fa-envelope font-st-none e99-color mg-l-20p"></a>
+            <a href="" class="fa fa-bell font-st-none e99-color mg-l-20p"></a>
+            <a href="Login.html" class="fa fa-sign-out font-st-none e99-color mg-l-20p">
+                <span>Logout</span> 
+            </a>
+            <a href="" class="fa fa-tasks font-st-none e99-color mg-l-20p mg-r-10p"></a>
+        </div>
+    </div>
+    <div id="mainContent">
+        <div class="h-300p bg-white pd-20 w-100 mg-t-10p">
+            <div class="fs-28 pr-font-color">Welcome Amelia</div>
+        </div>
+        <div class="mg-t-20p mg-l-20p mg-r-20p dp-flex-sp-bw pr-font-color fs-14">
+            <div class="w-32 dp-flex-c">
+                <div id="new-data-for-report" class="bg-white h-ft-content mg-b-20p">
+                    <div class="dp-flex-sp-bw pd-10 pr-btm-border">
+                        <div>
+                            <span class="mg-r-5p"><b>New data for the report</b></span>
+                            <span class="pd-2 pl-5 pr-5 border-rad-4p white-color pr-green-color">IN+</span>
+                        </div>
+                        <div class="c4-color">
+                            <span id="slide-up1" class="fa fa-chevron-up mg-r-5p"></span>
+                            <span id="slide-down1" class="fa fa-chevron-down mg-r-5p"></span>
+                            <span class="fa fa-wrench mg-r-5p"></span>
+                            <span id="close-content1" class="fa fa-times"></span>
+                        </div>
+                    </div>
+                    <div id="slide-content1" class="dp-flex-sp-bw pd-10"> 
+                        <div>
+                            <div>NYS report new data!</div>
+                            <div class="fs-13 blue-color">Check the stock price!</div>
+                        </div>
+                        <div class="fs-13">
+                            $ 20,054,43
+                        </div>
+                    </div>
+                </div>
+                <div id="read-below-comments-tweets" class="bg-white h-ft-content">
+                    <div class="dp-flex-sp-bw pd-10 pr-btm-border ">
+                        <div class="mg-r-5p"><b>Read below comments and tweets</b></div>
+                        <div class="c4-color">
+                            <span id="slide-up2" class="fa fa-chevron-up mg-r-5p"></span>
+                            <span id="slide-down2" class="fa fa-chevron-down mg-r-5p"></span>
+                            <span class="fa fa-wrench mg-r-5p"></span>
+                            <span id="close-content2" class="fa fa-times"></span>
+                        </div>
+                    </div>
+                    <div id="comments-and-tweets"></div>
+                </div>
+            </div>
+            <div class="w-32 bg-white h-ft-content">
+                <div class="dp-flex-sp-bw pd-10 pr-btm-border">
+                    <div><b>Your daily feed</b></div>
+                    <div class="white-color pl-5 pr-5 fs-12 pr-orange-color border-rad-4p">
+                        10 messages
+                    </div>
+                </div>
+                <div id="daily-feed" class="pd-20"></div>
+                <div class="pr-green-color pointer white-color pd-10 mg-l-20p mg-r-20p align-font-center border-rad-4p mg-b-20p">
+                    <span class="fa fa-arrow-down"></span>
+                    <span>Show More</span>
+                </div>
+            </div>
+            <div id="alpha-project" class="w-32 bg-white h-ft-content">
+                <div class="dp-flex-sp-bw pd-10 pr-btm-border">
+                    <div><b>Alpha project</b></div>
+                    <div class="c4-color">
+                        <span id="slide-up3" class="fa fa-chevron-up mg-r-5p"></span>
+                        <span id="slide-down3" class="fa fa-chevron-down mg-r-5p"></span>
+                        <span class="fa fa-wrench mg-r-5p"></span>
+                        <span id="close-content3" class="fa fa-times"></span>
+                    </div>
+                </div>
+                <div id="slide-content3" class="c-bg-lblue pd-20 pr-btm-border">
+                    <div class="fs-28">You have meeting today!</div>
+                    <div class="mg-t-10p">
+                        <span class="fa fa-map-marker"></span>
+                        <span class="fs-13">Meeting is on 6:00am. Check your schedule to see detail.</span>
+                    </div>
+                </div>
+                <div id="today-schedule"></div>
+            </div>
+        </div>
+        <div class="bg-white dp-flex-sp-bw pd-10 w-100 mg-t-10p pr-font-color fs-13 p-relative bottom-0">
+            <div class=""><b>Copyright</b> Example Company © 2014-2018</div>
+            <div>10GB of <b>250GB</b> Free.</div>
+        </div>
+        <div class="p-fixed bottom-0 right-0 cust-trans-20p" id="chat-btn">
+            <div class="circle-34 pr-green-color"><span class="white-color fa fa-comments pl-10 pt-10"></span></div>
+        </div>
+        <div class="bg-white pr-border h-300p dp-hidden bottom-0 right-0 border-rad-4p cust-trans-chatbox w-20 p-fixed fs-13" id="chat-box">
+            <div class="white-color bg-2F4050 dp-flex-sp-bw pd-10">
+                <div><b>Small Chat</b></div>
+                <div>Date</div>
+            </div>
+            <div id="chat-messages" class="pd-10 w-95 overflow-y h-200p float-cl"></div>
+            <div class="pd-10 mg-b-10p">
+                <input id="chat-box-enter" type="text" class="pr-border w-95 pd-10 bottom-0 p-absolute" placeholder="Type your message.."></input>
+            </div>
+        </div>
+    </div>
+    
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script src="dashboard.js"></script>
+</html>

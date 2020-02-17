@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tables</title>
+    <link rel="stylesheet" type="text/css" href="Main.css" />
+    <link rel="stylesheet" type="text/css" href="Theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-gray">
+    <div class="dp-flex-r-rev w-50 mg-t-20p">
+        <input id="delete-rows" onclick="deleteSelectedrows()" type="button" value="Delete" class="pd-5 bg-green white-color no-border-ip border-rad-4p"></input>
+        <select id="select-role" onclick="changeRole()" class="pd-5 mg-r-20p bg-green white-color no-border-ip border-rad-4p">
+            <option value="Engineer">Engineer</option>
+            <option value="BA">BA</option>
+            <option value="Designer">Designer</option>
+        </select>
+        <input id="filter-rows" oninput="filterRows()" type="search" placeholder="search" class="pd-5 mg-r-20p border-rad-4p no-border-ip"></input>
+    </div>
+    <table class="w-50 no-border align-font-center mg-l-40p mg-t-20p bg-white">
+        <thead class="pr-btm-border">
+            <th>
+                <input type="checkbox" name="selectAll" id="select-all" onclick="selectAll()">
+            </th>
+            <th class="pd-10">Name</th>
+            <th>Role</th>
+            <th>Department</th>
+            <th>Action</th>
+        </thead>
+        <tbody id="employee-table"></tbody>
+    </table>
+
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script src="tables.js"></script>
+</html>
