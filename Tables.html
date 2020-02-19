@@ -18,7 +18,7 @@
         </select>
         <input id="filter-rows" oninput="filterRows()" type="search" placeholder="search" class="pd-5 mg-r-20p border-rad-4p no-border-ip"></input>
     </div>
-    <table class="w-50 no-border align-font-center mg-l-40p mg-t-20p bg-white">
+    <table id="employee-details" class="w-50 no-border align-font-center mg-l-40p mg-t-20p bg-white">
         <thead class="pr-btm-border">
             <th>
                 <input type="checkbox" name="selectAll" id="select-all" onclick="selectAll()">
@@ -30,6 +30,44 @@
         </thead>
         <tbody id="employee-table"></tbody>
     </table>
+
+    <div class="w-50 mg-t-40p mg-l-40p">
+      <ul id="employee-dashboard" class="tabs dp-flex fs-13">
+        <li class="pd-10 no-border-ip bg-gray pointer active-tab" data-tab="tab-1">Employee</li>
+        <li class="pd-10 no-border-ip bg-gray pointer" data-tab="tab-2">Role</li>
+        <li class="pd-10 no-border-ip bg-gray pointer" data-tab="tab-3">Department</li>
+      </ul>
+      <div id="tab-1" class="fs-13 bg-white tab-content active-tab">
+        <div class="mg-l-20p pd-10 fs-28">Employee Name</div>
+        <div class="mg-l-20p pd-10">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </div>
+      <div id="tab-2" class="fs-13 bg-white tab-content">
+        <div class="mg-l-20p pd-10 fs-28">Role Name</div>
+        <div class="mg-l-20p pd-10">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </div>
+      <div id="tab-3" class="fs-13 bg-white tab-content">
+        <div class="mg-l-20p pd-10 fs-28">Department Name</div>
+        <div class="mg-l-20p pd-10">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </div>
+    </div>
 
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

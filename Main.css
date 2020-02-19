@@ -176,6 +176,31 @@
   display: none;
 }
 
+#employee-dashboard {
+  margin-left: -40px;
+}
+
+#employee-dashboard li {
+  list-style-type: none;
+}
+
+#employee-dashboard li:hover {
+  background-color: #d9d9d9;
+}
+
+#employee-dashboard .active-tab {
+  background-color: #ffffff;
+  border-bottom: 1px solid #E7EAEC;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active-tab {
+  display: block;
+}
+
 
 
 /* .dropdown-content {

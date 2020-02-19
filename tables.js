@@ -37,16 +37,18 @@ $.each(employeeTable, function(index, value) {
   );
 });
 
+// delete a row on clicking delete button
 function deleteTablerow() {
-  $("table").on("click", 'input[value="Delete"]', function() {
+  $("#employee-details").on("click", 'input[value="Delete"]', function() {
     $(this)
       .closest("tr")
       .remove();
   });
 }
 
+//select all the rows
 function selectAll() {
-  $("table").on("click", "#select-all", function() {
+  $("#employee-details").on("click", "#select-all", function() {
     if ($("#select-all").is(":checked")) {
       $("tr")
         .find('input[type="checkbox"]')
@@ -59,31 +61,50 @@ function selectAll() {
   });
 }
 
+//delete selected rows
 function deleteSelectedrows() {
-  $("table tbody tr")
+  $("#employee-details tbody tr")
     .find('input[type="checkbox"]:checked')
     .closest("tr")
     .remove();
 }
 
+//change the role for all or selected rows
 function changeRole() {
   var roleTochange = $("#select-role").val();
-  if ($("table tbody tr input[type='checkbox']").is(":checked")) {
-    $("table tbody tr input[type='checkbox']:checked")
+  if ($("#employee-details tbody tr input[type='checkbox']").is(":checked")) {
+    $("#employee-details tbody tr input[type='checkbox']:checked")
       .closest("tr")
       .find("#roles")
       .val(roleTochange);
   } else {
-    $("table tbody tr")
+    $("#employee-details tbody tr")
       .find("#roles")
       .val(roleTochange);
   }
 }
 
+//search for the text across all rows
 function filterRows() {
-    console.log($("#filter-rows").val());
     var searchText = $("#filter-rows").val().toLowerCase();
-    
+    $("#employee-details tbody tr").filter(function(){
+      $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1);
+    }); 
 }
+
+//tab component
+switchTab();
+function switchTab(){
+  $('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+		$('ul.tabs li').removeClass('active-tab');
+		$('.tab-content').removeClass('active-tab');
+		$(this).addClass('active-tab');
+		$("#"+tab_id).addClass('active-tab');
+	})
+}
+
+
+
 
 
