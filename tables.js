@@ -105,6 +105,25 @@ function switchTab(){
 }
 
 
+//Menu content
+var toggleMenuclick = 0;
+$("#toggle-menu-component").on("click",function(){
+  toggleMenuclick++;
+  if (toggleMenuclick % 2 == 0){
+    $("#menu-component").animate({marginLeft:"-120px"},1000,"linear");
+  }
+  else{
+    $("#menu-component").animate({marginLeft:"0px"},1000,"linear");
+  }
+});
+
+var dashboardClick = 0;
+function menuDropdownOptions(options){
+  dashboardClick++;
+  if (dashboardClick % 2 == 0) {
+    $(options).slideUp();
+  } else $(options).slideDown();
+}
 
 
 

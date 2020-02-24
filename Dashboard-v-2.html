@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard-v-2</title>
+    <link rel="stylesheet" type="text/css" href="Main.css" />
+    <link rel="stylesheet" type="text/css" href="Theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-gray">
+    <div class="dp-flex">
+      <div id="menu-component" class="dp-flex-c fs-13 bg-2F4050 w-200p h-ft-content">
+        <div class="circle-48 bg-gray mg-l-20p mg-t-40p"></div>
+        <div class="e6-color mg-l-20p mg-t-5p fs-15">David Williams</div>
+        <div class="mg-l-20p mg-t-5p e81-color">
+          Art Director
+          <span class="fa fa-caret-down"></span>
+        </div>
+        <a id="menu-dashboard" onclick="menuDropdownOptions('#menu-dashboard-content')" class="font-st-none pd-10 mg-t-20p mg-l-10p e81-color" href="#">
+          <span class="fa fa-th-large"></span>
+          <span>Dashboard</span>
+        </a>
+        <div id="menu-dashboard-content" class="bg-dropdown-menu c-left-border-green">
+          <a class="font-st-none pd-10 mg-l-10p e81-color dp-flex" href="Dashboard-v-1.html">Dashboard-v-1</a>
+          <a class="font-st-none pd-10 mg-l-10p e81-color dp-flex" href="Dashboard-v-2.html">Dashboard-v-2</a>
+        </div>
+
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#contact">
+          <span class="fa fa-diamond"></span>
+          <span>Layouts</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#about">
+          <span class="fa fa-bar-chart"></span>
+          <span>Graphs</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#services">
+          <span class="fa fa-envelope"></span>
+          <span>Mailbox</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#clients">
+          <span class="fa fa-wrench"></span>
+          <span>Widgets</span>
+        </a>
+        <a id="menu-forms" onclick="menuDropdownOptions('#menu-forms-content')" class="font-st-none pd-10 mg-l-10p e81-color" href="#contact">
+          <span class="fa fa-wpforms"></span>
+          <span>Forms</span>
+        </a>
+        <div id="menu-forms-content" class="bg-dropdown-menu c-left-border-green">
+          <a class="font-st-none pd-10 mg-l-10p e81-color dp-flex" href="#">Basic Form</a>
+          <a class="font-st-none pd-10 mg-l-10p e81-color dp-flex" href="#">File Upload</a>
+        </div>
+
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#contact">
+          <span class="fa fa-desktop"></span>
+          <span>App Views</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#contact">
+          <span class="fa fa-files-o"></span>
+          <span>Other Pages</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#contact">
+          <span class="fa fa-globe"></span>
+          <span>Miscellaneous</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#contact">
+          <span class="fa fa-paint-brush"></span>
+          <span>UI Elements</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#contact">
+          <span class="fa fa-laptop"></span>
+          <span>Grid Options</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="Tables.html">
+          <span class="fa fa-table"></span>
+          <span>Tables</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#contact">
+          <span class="fa fa-file-picture-o"></span>
+          <span>Gallery</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#contact">
+          <span class="fa fa-paint-brush"></span>
+          <span>Menu Levels</span>
+        </a>
+        <a class="font-st-none pd-10 mg-l-10p e81-color" href="#contact">
+          <span class="fa fa-magic"></span>
+          <span>CSS Animations</span>
+        </a>
+      </div>
+      <div class="dp-flex-c" id="webpage-content">
+        <div id="header-content" class="dp-flex p-absolute w-95 pd-10 bg-white">
+          <div id="toggle-menu-component" class="bg-white pd-10 border-rad-4p">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="dp-flex-sp-bw fs-13 border-box w-95 mg-l-50p p-absolute">
+            <input type="search" id="headerSearch" class="no-border-ip w-20 bg-transprnt" placeholder="Search for something..."></input>
+            <div class="mg-t-10p">
+                <span class="e99-color">Welcome to INSPINIA+ Admin Theme.</span>
+                <a href="" class="fa fa-envelope font-st-none e99-color mg-l-20p"></a>
+                <a href="" class="fa fa-bell font-st-none e99-color mg-l-20p"></a>
+                <a href="Login.html" class="fa fa-sign-out font-st-none e99-color mg-l-20p">
+                    <span>Logout</span> 
+                </a>
+                <a href="" class="fa fa-tasks font-st-none e99-color mg-l-20p mg-r-10p"></a>
+            </div>
+          </div>
+
+          <div class="mg-t-40p">
+            <div class="dp-flex-sp-bw w-95 p-absolute mg-t-inherit">
+                <div class="bg-white pd-10 w-23">
+                    Box 1
+                </div>
+                <div class="bg-white pd-10 w-23">
+                    Box 2
+                </div>
+                <div class="bg-white pd-10 w-23">
+                    Box 3
+                </div>
+                <div class="bg-white pd-10 w-23">
+                    Box 4
+                </div>
+            </div>
+
+            
+
+          </div>
+          
+
+        </div>
+        
+
+        
+    </div>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="main.js"></script>
+<script src="tables.js"></script>
+</html>
