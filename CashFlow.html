@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cash Flow</title>
+    <link rel="stylesheet" type="text/css" href="Main.css" />
+    <link rel="stylesheet" type="text/css" href="Theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-gray">
+    <nav class="pr-green-color w-100">
+        <div class="dp-flex-sp-bw w-80 pd-10 white-color">
+            <div class="mg-l-40p">
+                <i class="fa fa-dollar"></i>
+                <b>CashFlow</b>
+            </div>
+            <div>
+                <i class="fa fa-user-circle"></i>
+                <select name="profile-navigate" id="profileNavigate" onchange="" class="pr-green-color white-color no-border-ip border-rad-4p fs-13 pd-2 mg-l-5p">
+                    <option value="Profile">Kovachs</option>
+                    <option value="View Expenses">View Expenses</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <section class="align-font-center w-80 mg-t-20p">
+        <button class="pd-5 pr-green-color white-color no-border-ip border-rad-4p">Add Expense</button>
+        <button class="pd-5 mg-l-10p pr-green-color white-color no-border-ip border-rad-4p">Settle Up</button>
+    </section>
+
+    <div class="dp-flex w-100 h-100">
+        <div class="w-18">
+            <section class="h-200p">
+                <div class="mg-t-20p mg-l-40p w-71 dp-flex-sp-bw pd-5 d9-bg-color">
+                    <Span>Groups</Span>
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="dp-flex-sp-bw mg-t-5p mg-l-40p w-71">
+                    <input type="text" class="w-71 pr-border border-rad-4p" id="addGroup"></input>
+                    <input type="button" class="w-23 fs-12 d9-bg-color pr-border border-rad-4p" onclick="createGroup()" value="Add"></input>
+                </div>
+                <ul class="w-85 h-120 mg-t-10p overflow-y" id="groupsList"></ul>
+            </section>
+            <section class="h-200p">
+                <div class="mg-t-10p mg-l-40p w-71 dp-flex-sp-bw pd-5 d9-bg-color">
+                    <Span>Friends</Span>
+                    <i class="fa fa-user-plus"></i>
+                </div>
+                <div class="dp-flex-sp-bw mg-t-5p mg-l-40p w-71">
+                    <input type="text" class="w-71 pr-border border-rad-4p" id="addFriend"></input>
+                    <input type="button" class="w-23 fs-12 d9-bg-color pr-border border-rad-4p" onclick="createFriend()" value="Add"></input>
+                </div>
+                <ul class="w-85 h-120 mg-t-10p overflow-y" id="friendsList"></ul>
+            </section>
+        </div>
+        <div class="w-55 bg-white mg-t-20p">
+            <div class="mg-t-20p pr-fnt-green-color font-st-uline align-font-center">
+               <b>Expenses & Debts</b> 
+            </div>
+            <div id="renderContent"></div>
+        </div>
+    </div>
+    
+    <footer class="pr-green-color white-color pd-10 fs-13 align-font-center bottom-0 p-absolute w-100">
+        <i>&copy;</i>
+        <span>2020 CashFlow Inc. All Rights Reserved. </span>
+    </footer>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script src="cashflow.js"></script>
+</html>
