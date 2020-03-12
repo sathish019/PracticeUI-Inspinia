@@ -38,6 +38,14 @@
     text-decoration: none;
 }
 
+.font-st-uline {
+    text-decoration: underline;
+}
+
+.font-st-lthrough {
+    text-decoration: line-through;
+}
+
 .fs-12 {
     font-size: 12px;
 }
@@ -100,6 +108,10 @@
 
 .align-it-center {
     align-items: center;
+}
+
+.align-font-left {
+    text-align: left;
 }
 
 .align-font-center {

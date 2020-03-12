@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To Do List</title>
+    <link rel="stylesheet" type="text/css" href="Main.css" />
+    <link rel="stylesheet" type="text/css" href="Theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="bg-gray">
+    <div class="bg-white w-50 mg-t-40p mg-l-40p pd-20">
+        <div class="w-100 align-font-center font-st-uline success-color"><b>To Do List</b></div>
+        <div class="dp-flex mg-t-20p mg-l-40p">
+            <div class="w-18 fs-15 mg-t-5p">
+                <b>Task Name:</b>
+            </div>
+            <div class="w-48">
+                <input type="text" class="pd-5 border-rad-4p pr-border w-100" id="taskName" placeholder="Enter your task here..."></input>
+            </div>
+            <div class="w-18">
+                <input type="button" onclick="addTask()"class="pd-5 mg-l-40p bg-green white-color no-border-ip border-rad-4p w-100" value="Add Task"></input>
+            </div>
+        </div>
+        <div class="dp-flex mg-t-10p mg-l-40p">
+            <div class="w-18 fs-15 mg-t-5p">
+                <b>Due Date:</b>
+            </div>
+            <div class="w-48">
+                <input type="text" class="pd-5 border-rad-4p pr-border w-100" id="taskDate" placeholder="Due date"></input>
+            </div>
+        </div>
+
+        <div class="dp-flex mg-t-10p mg-l-40p mg-t-20p">
+            <div class="font-st-uline success-color mg-t-5p">
+                <b>Search Task:</b>
+            </div>
+            <div class="w-48">
+                <input type="search" id="searchBytaskname" oninput="searchTasks()" class="pd-5 border-rad-4p pr-border w-100 mg-l-10p" id="taskFilter" placeholder="Search for tasks.."></input>
+            </div>
+        </div>
+        
+        <table id="toDoactivities" class="w-100 pd-20 mg-t-20p fs-15 no-border align-font-center">
+            <thead class="pr-btm-border">
+                <th></th>
+                <th class="pd-10">Task Name</th>
+                <th class="">Status 
+                    <select name="select-status" id="selectStatus" onchange="filterTasks()" class="pd-2 fs-12 bg-green white-color no-border-ip border-rad-4p w-50">
+                        <option value="View All">View All</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Due">Due</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </th>
+                <th class="pd-10">Action</th>
+            </thead>
+            <tbody id="tasksforToday" class="fs-13">
+            </tbody>
+        </table>
+
+    </div>
+
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script src="todolist.js"></script>
+</html>

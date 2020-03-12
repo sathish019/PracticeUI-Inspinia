@@ -235,6 +235,8 @@
   border-radius: 5px;
 }
 
-
+.editingTask {
+  display: none;
+}
 
 
