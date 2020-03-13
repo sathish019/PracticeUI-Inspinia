@@ -49,13 +49,13 @@ var friendsLIST = [
     expenseDetails: [
       {
         expenseId: 3000,
-        expenseName: "Bus Ticket",
-        paidByuser: "Myself",
+        expenseName: "Movie Ticket",
+        paidByuser: "Kovachs",
         paidAmount: 200
       },
       {
         expenseId: 4000,
-        expenseName: "Train Ticket",
+        expenseName: "Taxi Fare",
         paidByuser: "Alan",
         paidAmount: 300
       }
@@ -67,8 +67,8 @@ var friendsLIST = [
     expenseDetails: [
       {
         expenseId: 3000,
-        expenseName: "Bus Ticket",
-        paidByuser: "Myself",
+        expenseName: "Auto Fare",
+        paidByuser: "Kovachs",
         paidAmount: 200
       },
       {
@@ -85,13 +85,13 @@ var friendsLIST = [
     expenseDetails: [
       {
         expenseId: 3000,
-        expenseName: "Bus Ticket",
-        paidByuser: "Myself",
+        expenseName: "Snacks",
+        paidByuser: "Kovachs",
         paidAmount: 200
       },
       {
         expenseId: 4000,
-        expenseName: "Train Ticket",
+        expenseName: "Flight Ticket",
         paidByuser: "Kelso",
         paidAmount: 300
       }
@@ -110,7 +110,7 @@ var groupLIST = [
         expenseName: "Food",
         paidByuser: "Charlie",
         paidAmount: 500,
-        splitBetweenusers: ["Charlie", "Alan", "Kelso"]
+        splitBetweenusers: ["Charlie", "Alan", "Jake"]
       },
       {
         expenseId: 20012,
@@ -128,14 +128,14 @@ var groupLIST = [
     expenseDetails: [
       {
         expenseId: 30011,
-        expenseName: "Food",
+        expenseName: "Breakfast",
         paidByuser: "Charlie",
         paidAmount: 500,
         splitBetweenusers: ["Charlie", "Alan", "Kelso"]
       },
       {
         expenseId: 30012,
-        expenseName: "Room rent",
+        expenseName: "Bus Ticket",
         paidByuser: "Alan",
         paidAmount: 700,
         splitBetweenusers: ["Alan", "Kelso"]
@@ -145,10 +145,10 @@ var groupLIST = [
         expenseName: "Snacks",
         paidByuser: "Kelso",
         paidAmount: 300,
-        splitBetweenusers: ["Alan", "Kelso", "Charlie", "Jake", "Kovachs"]
+        splitBetweenusers: ["Alan", "Kelso", "Jake", "Kovachs"]
       }
     ],
-    groupMembers: ["Charlie", "Alan", "Kelso", "Jake", "Kovachs"]
+    groupMembers: ["Alan", "Kelso", "Jake", "Kovachs"]
   },
   {
     groupId: 10013,
@@ -163,10 +163,10 @@ var groupLIST = [
       },
       {
         expenseId: 40012,
-        expenseName: "Room rent",
-        paidByuser: "Alan",
+        expenseName: "Flight ticket",
+        paidByuser: "Kelso",
         paidAmount: 700,
-        splitBetweenusers: ["Alan", "Kelso"]
+        splitBetweenusers: ["Kelso", "Alan"]
       },
       {
         expenseId: 40013,
@@ -184,10 +184,10 @@ var groupLIST = [
     expenseDetails: [
       {
         expenseId: 50011,
-        expenseName: "Food",
+        expenseName: "Snacks",
         paidByuser: "Charlie",
         paidAmount: 500,
-        splitBetweenusers: ["Charlie", "Alan", "Kelso"]
+        splitBetweenusers: ["Charlie", "Alan", "Jake"]
       },
       {
         expenseId: 50012,
@@ -198,13 +198,13 @@ var groupLIST = [
       },
       {
         expenseId: 50013,
-        expenseName: "Snacks",
+        expenseName: "Drinks",
         paidByuser: "Kelso",
         paidAmount: 300,
-        splitBetweenusers: ["Alan", "Kelso", "Charlie", "Jake", "Kovachs"]
+        splitBetweenusers: ["Alan", "Charlie", "Jake", "Kovachs"]
       }
     ],
-    groupMembers: ["Charlie", "Alan", "Kelso", "Jake", "Kovachs"]
+    groupMembers: ["Charlie", "Alan", "Jake", "Kovachs"]
   }
 ];
 
@@ -245,21 +245,75 @@ function createFriend() {
 }
 
 //render expenses between a friend
-function renderExpenses() {
-  $("#friendsList ul").on('click',function(){
-    const selectedFriend = $(this).text();  
-    console.log(selectedFriend);
-
+function renderExpensesbetweenfriends() {
+  $("#friendsList ul").on("click", function() {
+    const selectedFriend = $(this).text();
     $.each(friendsLIST, function(index, value) {
-        if(value.friendName==selectedFriend){
-            $("#renderContent").empty();
-            $.each(value.expenseDetails, function(index,value){
-                $("#renderContent").append(
-                '<div class="mg-t-10p mg-l-40p dp-flex"><div>'+ value.paidByuser +'</div><div class="mg-l-20p">'+ value.paidAmount +'</div></div>'
-                );
-            });
-        }
+      if (value.friendName == selectedFriend) {
+        $("#renderContent").empty();
+        $.each(value.expenseDetails, function(index, value) {
+          if (value.paidByuser == selectedFriend) {
+            $("#renderContent").append(
+                '<div class="mg-t-10p mg-l-40p dp-flex"><div class="w-18"><b>'+
+                value.expenseName +'</b></div><div class="mg-l-10p dp-flex-c"><div>&nbspyou barrowed&nbsp<i class="fa fa-inr mg-r-5p"></i>' +
+                (value.paidAmount)/2 +'</div><div class="mg-t-5p mg-l-10p fs-13 pr-font-color">' +
+                value.paidByuser +'&nbsppaid&nbsp'+ 
+                value.paidAmount +'</div></div></div>'
+            );
+          } else {
+            $("#renderContent").append(
+                '<div class="mg-t-10p mg-l-40p dp-flex"><div class="w-18"><b>'+
+                value.expenseName +'</b></div><div class="mg-l-10p dp-flex-c"><div>&nbspyou lent&nbsp<i class="fa fa-inr mg-r-5p"></i>' +
+                (value.paidAmount)/2 +'</div><div class="mg-t-5p mg-l-10p fs-13 pr-font-color">&nbspyou paid&nbsp'+ 
+                value.paidAmount +'</div></div></div>'
+            );
+          }
+        });
+      }
     });
   });
 }
-renderExpenses();
+renderExpensesbetweenfriends();
+
+//render group expenses
+function renderExpensesbetweengroups() {
+  $("#groupsList ul").on("click", function() {
+    const selectedGroup = $(this).text();
+    $.each(groupLIST, function(index, value) {
+      const { groupName, groupMembers, expenseDetails } = value;
+      if (groupName == selectedGroup) {
+        $("#renderContent").empty();
+
+        $("#renderContent")
+          .append(`<div class="w-100 align-font-center mg-t-20p pr-fnt-green-color"><b>
+                ${groupName} </b></div><div class="dp-flex mg-l-40p mg-t-10p"><div class="groupmembr dp-flex-c"><span><b>Group Members</b></span></div><div class="dp-flex-c mg-l-40p"><span><b>Expenses</b></span><div class="expenselst dp-flex-c"></div></div></div>`);
+        $.each(groupMembers, function(index, value) {
+          $(".groupmembr").append(
+            '<div class="fs-14 pd-2">' + value + "</div>"
+          );
+        });
+        $.each(expenseDetails, function(index, value) {
+          const { expenseId, expenseName, paidByuser, paidAmount } = value;  
+          $(".expenselst").append(
+            '<div class="fs-14 pd-2 dp-flex"><span class="pr-fnt-green-color">' +
+              expenseName +
+              ' - </span><div class="dp-flex-c"><div class="dp-flex">&nbsp' +
+              paidByuser +
+              '&nbsppaid&nbsp<i class="fa fa-inr"></i>' +
+              paidAmount +
+              "</div><div id=" +
+              expenseId +
+              ' class="expensediscriptn pr-font-color">' +
+              paidByuser +
+              "&nbspowed</div></div></div>"
+          );
+
+          $.each(value.splitBetweenusers, function(index, usernames) {
+            $("#" + value.expenseId).append(`<span> ${usernames} </span>`);
+          });
+        });
+      }
+    });
+  });
+}
+renderExpensesbetweengroups();
