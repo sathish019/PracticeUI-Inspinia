@@ -30,13 +30,13 @@ var friendsLIST = [
     friendName: "Charlie",
     expenseDetails: [
       {
-        expenseId: 3000,
+        expenseId: 1000,
         expenseName: "Bus Ticket",
         paidByuser: "Kovachs",
         paidAmount: 200
       },
       {
-        expenseId: 4000,
+        expenseId: 2000,
         expenseName: "Train Ticket",
         paidByuser: "Charlie",
         paidAmount: 300
@@ -51,13 +51,13 @@ var friendsLIST = [
         expenseId: 3000,
         expenseName: "Movie Ticket",
         paidByuser: "Kovachs",
-        paidAmount: 200
+        paidAmount: 400
       },
       {
         expenseId: 4000,
         expenseName: "Taxi Fare",
         paidByuser: "Alan",
-        paidAmount: 300
+        paidAmount: 500
       }
     ]
   },
@@ -66,16 +66,16 @@ var friendsLIST = [
     friendName: "Jake",
     expenseDetails: [
       {
-        expenseId: 3000,
+        expenseId: 5000,
         expenseName: "Auto Fare",
         paidByuser: "Kovachs",
-        paidAmount: 200
+        paidAmount: 700
       },
       {
-        expenseId: 4000,
+        expenseId: 6000,
         expenseName: "Train Ticket",
         paidByuser: "Kovachs",
-        paidAmount: 300
+        paidAmount: 200
       }
     ]
   },
@@ -84,13 +84,13 @@ var friendsLIST = [
     friendName: "Kelso",
     expenseDetails: [
       {
-        expenseId: 3000,
+        expenseId: 7000,
         expenseName: "Snacks",
         paidByuser: "Kovachs",
-        paidAmount: 200
+        paidAmount: 500
       },
       {
-        expenseId: 4000,
+        expenseId: 8000,
         expenseName: "Flight Ticket",
         paidByuser: "Kelso",
         paidAmount: 300
@@ -108,9 +108,9 @@ var groupLIST = [
       {
         expenseId: 20011,
         expenseName: "Food",
-        paidByuser: "Charlie",
-        paidAmount: 500,
-        splitBetweenusers: ["Charlie", "Alan", "Jake"]
+        paidByuser: "Kovachs",
+        paidAmount: 600,
+        splitBetweenusers: ["Kovachs", "Alan", "Jake"]
       },
       {
         expenseId: 20012,
@@ -303,9 +303,9 @@ function renderExpensesbetweengroups() {
               paidAmount +
               "</div><div id=" +
               expenseId +
-              ' class="expensediscriptn pr-font-color">' +
-              paidByuser +
-              "&nbspowed</div></div></div>"
+              ' class="expensediscriptn pr-font-color"><i class="fa fa-inr"></i>' +
+              paidAmount +
+              "&nbspis split between</div></div></div>"
           );
 
           $.each(value.splitBetweenusers, function(index, usernames) {
@@ -317,3 +317,63 @@ function renderExpensesbetweengroups() {
   });
 }
 renderExpensesbetweengroups();
+
+//view self expenses
+function viewSelfexpenses(){
+  $("#renderContent").empty(); 
+  const selectedOption = $("#profileNavigate").val();
+  
+  $("#renderContent").append(`<div class="align-font-center pr-fnt-green-color mg-t-20p"><b>Friends Expenses<b></div><div class="mg-l-40p mg-t-10p expenseWithfriend"></div><div class="align-font-center pr-fnt-green-color mg-t-20p"><b>Groups Expenses<b></div><div class="mg-l-40p mg-t-10p expenseWithgroup"></div>`);
+  $.each(friendsLIST,function(index,value){
+    const {friendId, friendName, expenseDetails} = value;
+    $(".expenseWithfriend").append(`<div>${friendName}&nbsp<span id=${friendId}></span></div>`);
+
+    const sum = expenseDetails.reduce(function(acc, obj) {
+      if (acc[obj.paidByuser]) {
+        acc[obj.paidByuser] += obj.paidAmount;
+      } else {
+        acc[obj.paidByuser] = obj.paidAmount;
+      }
+      return acc;
+    }, {});
+
+    function userSpentmax() {
+      let maxAmount = 0;
+      let maxUser = "";
+      let totalAmount = 0;
+      for (let user in sum) {
+        totalAmount += sum[user];
+        if (sum[user] > maxAmount) {
+          maxAmount = sum[user];
+          maxUser = user;
+        }
+      }
+      const computed = [maxUser, maxAmount, totalAmount];
+      return computed;
+    }
+    const compute = userSpentmax();
+    
+    let owedAmount = Math.round(compute[1] - (compute[2] / 2));
+
+    if (compute[0] == "Kovachs") {
+      console.log("you are owed " + owedAmount);
+      $("#"+friendId).append(`<span class="pr-font-color fs-14">-&nbspyou get back&nbsp<i class="fa fa-inr pr-fnt-green-color">${owedAmount}</i></span>`);
+    } else {
+      console.log("you owe " + owedAmount);
+      $("#"+friendId).append(`<span class="pr-font-color fs-14">-&nbspyou owe&nbsp<i class="fa fa-inr pr-fnt-green-color">${owedAmount}</i></span>`);
+    }
+  });
+
+
+  $.each(groupLIST,function(index,value){
+     const {groupId, groupName, expenseDetails} = value; 
+     $(".expenseWithgroup").append(`<div>${groupName}&nbsp<span id=${groupId}></span></div>`);
+     
+     
+
+  });
+  
+
+  
+}
+viewSelfexpenses();
