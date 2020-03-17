@@ -131,7 +131,7 @@ var groupLIST = [
         expenseName: "Breakfast",
         paidByuser: "Charlie",
         paidAmount: 500,
-        splitBetweenusers: ["Charlie", "Alan", "Kelso"]
+        splitBetweenusers: ["Charlie", "Alan", "Kovachs"]
       },
       {
         expenseId: 30012,
@@ -309,7 +309,7 @@ function renderExpensesbetweengroups() {
           );
 
           $.each(value.splitBetweenusers, function(index, usernames) {
-            $("#" + value.expenseId).append(`<span> ${usernames} </span>`);
+            $("#" + expenseId).append(`<span> ${usernames} </span>`);
           });
         });
       }
@@ -352,14 +352,12 @@ function viewSelfexpenses(){
       return computed;
     }
     const compute = userSpentmax();
-    
+
     let owedAmount = Math.round(compute[1] - (compute[2] / 2));
 
     if (compute[0] == "Kovachs") {
-      console.log("you are owed " + owedAmount);
       $("#"+friendId).append(`<span class="pr-font-color fs-14">-&nbspyou get back&nbsp<i class="fa fa-inr pr-fnt-green-color">${owedAmount}</i></span>`);
     } else {
-      console.log("you owe " + owedAmount);
       $("#"+friendId).append(`<span class="pr-font-color fs-14">-&nbspyou owe&nbsp<i class="fa fa-inr pr-fnt-green-color">${owedAmount}</i></span>`);
     }
   });
@@ -367,8 +365,30 @@ function viewSelfexpenses(){
 
   $.each(groupLIST,function(index,value){
      const {groupId, groupName, expenseDetails} = value; 
-     $(".expenseWithgroup").append(`<div>${groupName}&nbsp<span id=${groupId}></span></div>`);
+     $(".expenseWithgroup").append(`<div class="dp-flex">${groupName}&nbsp-&nbsp<span id=${groupId}></span></div>`);
      
+     $.each(expenseDetails,function(index,expns){
+       const {expenseId, expenseName, paidByuser, paidAmount,splitBetweenusers} = expns;
+        
+       var totalPaidamount = paidAmount;
+       var splitAmount = Math.round((paidAmount/(splitBetweenusers.length))*2);
+       var endUserexistcheck = splitBetweenusers.indexOf("Kovachs")
+       if((paidByuser=="Kovachs")&&(endUserexistcheck==0)){
+
+        $("#"+groupId).append(`<div class="fs-14">${expenseName}&nbsp-<span class="pr-font-color">&nbspyou get back&nbsp<i class="fa fa-inr pr-fnt-green-color">${splitAmount}</i></span></div>`);
+       }
+       else if((paidByuser!=="Kovachs")&&(endUserexistcheck==0)){
+        $("#"+groupId).append(`<div class="fs-14">${expenseName}&nbsp-<span class="pr-font-color">&nbspyou owe<i class="fa fa-inr pr-fnt-green-color">${splitAmount}</i>&nbspto&nbsp${paidByuser}</span></div>`);
+       }
+       else{
+        $("#"+groupId).append(`<div class="fs-14">${expenseName}&nbsp</div>`);   
+       }
+       //$("#"+groupId).append(`<div class="fs-14">${expenseName}&nbsp-<span class="pr-font-color">&nbsp${paidByuser}&nbsppaid&nbsp<i class="fa fa-inr pr-fnt-green-color">${paidAmount}</i></span></div>`);
+       $.each(splitBetweenusers, function(index,split){
+         console.log(expenseName + paidByuser + paidAmount + splitBetweenusers);  
+         
+       });
+     });
      
 
   });
